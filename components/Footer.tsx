@@ -9,10 +9,10 @@ export function Footer() {
         <div className="flex flex-col items-center text-center space-y-8">
           <div className="space-y-2">
             <h2 className="text-xl font-black tracking-tighter text-foreground">
-              Muhammad <span className="text-primary">Saad Raza.</span>
+              Muhammad <span className="text-primary">Bilal.</span>
             </h2>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
-              AI Engineer
+              Web Developer
             </p>
           </div>
 
@@ -41,21 +41,23 @@ export function Footer() {
 
           <div className="flex flex-wrap items-center justify-center gap-6">
             <a
-              href="mailto:msaadraza49@gmail.com"
+              href="mailto:officialbilal707@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/m-saadraza"
+              href="https://linkedin.com/in/bilal-basharat-5208a7388"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Linkedin size={20} />
             </a>
             <a
-              href="https://github.com/saadraza49"
+              href="https://github.com/bilalbasharat786"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Github size={20} />

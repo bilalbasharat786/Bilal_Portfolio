@@ -8,7 +8,7 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setFormStatus(null);
@@ -21,8 +21,18 @@ export function ContactSection() {
     };
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Yahan hum API ko call kar rahe hain!
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("API call failed");
+      }
 
       setFormStatus({
         type: "success",
@@ -31,6 +41,7 @@ export function ContactSection() {
 
       (e.target as HTMLFormElement).reset();
     } catch (error) {
+      console.error("Frontend Error:", error);
       setFormStatus({
         type: "error",
         message: "Something went wrong. Please try again later.",
