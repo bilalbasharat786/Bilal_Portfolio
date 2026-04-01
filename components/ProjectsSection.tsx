@@ -5,20 +5,20 @@ import { Github, ExternalLink, Sparkles } from "lucide-react";
 
 const projects = [
   {
-    title: "Customer Churn Prediction",
+    title: "Jamal Collection - E-Commerce",
     description:
-      "A machine learning project that predicts customer churn using Python. Includes data preprocessing, EDA, model training, and evaluation with accuracy metrics.",
-    tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "Jupyter"],
-    github: "https://github.com/saadraza49/Customer-Churn-Prediction",
-    live: null,
+      "A fully functional e-commerce platform built with the MERN stack. Features include product browsing, secure cart management, and a responsive user interface.",
+    tags: ["MongoDB", "Express", "React", "Node.js", "Tailwind"],
+    github: "https://github.com/bilalbasharat786/Ecommerce-Store-MERN",
+    live: "https://jamalcollection.com",
   },
   {
-    title: "Personal Portfolio Website",
+    title: "OnFlix - Movie Platform",
     description:
-      "This portfolio — designed and built from scratch. Fully responsive and deployed on Vercel with smooth animations and a modern dark aesthetic.",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/saadraza49/Personal-Portfolio",
-    live: "https://saadraza.vercel.app",
+      "A dynamic movie streaming application featuring Hollywood and Bollywood categories. Built with modern web technologies focusing on performance and seamless UI.",
+    tags: ["React", "Node.js", "API Integration", "Responsive Design"],
+    github: "https://github.com/bilalbasharat786/OnFlix-Movies",
+    live: "https://on-flix-movies-a7we.vercel.app",
   },
 ];
 
@@ -35,7 +35,7 @@ export function ProjectsSection() {
             Featured <span className="text-gradient-blue">Works</span>
           </h2>
           <p className="section-subtitle">
-            A selection of my recent projects involving AI, full-stack development, and complex problem-solving.
+            A selection of my recent projects involving the MERN stack, full-stack development, and responsive web design.
           </p>
         </div>
 
