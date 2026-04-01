@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215.4 25% 65%;
+    /* Increased contrast from 56.9% */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-style: normal !important;
+    /* Force no italics globally */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-[1200px] mx-auto px-6;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-md;
+  }
+
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent font-bold;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-black tracking-tight text-foreground;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-muted-foreground max-w-2xl;
+  }
+
+  /* ── Animated Hero Gradient + 3D Text ─────────────────────── */
+  .text-gradient-animate {
+    background: linear-gradient(100deg,
+        #60a5fa 0%,
+        #818cf8 30%,
+        #a78bfa 55%,
+        #60a5fa 80%,
+        #818cf8 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 6s ease infinite;
+    text-shadow: none;
+    /* 3-D depth via drop-shadow filter so it works on transparent text */
+    filter:
+      drop-shadow(0 2px 4px rgba(96, 165, 250, 0.35)) drop-shadow(0 4px 12px rgba(129, 140, 248, 0.2));
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% center;
+    }
+
+    50% {
+      background-position: 100% center;
+    }
+
+    100% {
+      background-position: 0% center;
+    }
+  }
+
+  /* ── Nav Link Animated Underline ───────────────────────────── */
+  .nav-link {
+    position: relative;
+    @apply text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 1.5px;
+    background: linear-gradient(90deg, #60a5fa, #818cf8);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    @apply text-primary;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* ── Infinite Marquee Animation ────────────────────────────── */
+  .marquee-container {
+    @apply flex overflow-hidden select-none w-full;
+  }
+
+  .marquee-content {
+    @apply flex shrink-0 justify-around gap-16 min-w-full animate-marquee;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+  }
+
+  .tech-icon {
+    @apply h-10 w-auto grayscale opacity-40 transition-all duration-500 hover:grayscale-0 hover:opacity-100 hover:scale-110 cursor-default;
+  }
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.35);
+  color: #ffffff;
+}
