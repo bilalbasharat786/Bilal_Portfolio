@@ -18,7 +18,7 @@ const projects = [
       "A dynamic movie streaming application featuring Hollywood and Bollywood categories. Built with modern web technologies focusing on performance and seamless UI.",
     tags: ["React", "Node.js", "API Integration", "Responsive Design"],
     github: "https://github.com/bilalbasharat786/OnFlix-Movies",
-    live: "https://on-flix-movies-a7we.vercel.app",
+    live: "https://onflixstream.vercel.app",
   },
 ];
 
